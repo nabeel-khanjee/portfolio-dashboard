@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_profile/constants.dart';
 import 'package:flutter_profile/models/dashboardButtons.dart';
+import 'package:flutter_profile/responsive.dart';
 import 'package:flutter_profile/screens/Dashboard/Page/AddExp/add_exp.dart';
 import 'package:flutter_profile/screens/Dashboard/Page/SetExp/set_exp.dart';
 import 'package:flutter_profile/screens/main/components/side_menu.dart';
@@ -12,13 +13,26 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Dashboard"),
-      ),
-      body: Container(
-        child: Row(
-          children: [
-            Expanded(flex: 2, child: SideMenu()),
+      appBar: Responsive.isDesktop(context)
+          ? null
+          : AppBar(
+              backgroundColor: bgColor,
+              leading: Builder(
+                builder: (context) => IconButton(
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                  icon: Icon(Icons.menu),
+                ),
+              ),
+            ),
+      drawer: SideMenu(),
+      body: Row(children: [
+        if (Responsive.isDesktop(context))
+                Expanded(
+                  flex: 2,
+                  child: SideMenu(),
+                ),
             Expanded(
               flex: 8,
               child: Container(
@@ -69,7 +83,7 @@ class Dashboard extends StatelessWidget {
             )
           ],
         ),
-      ),
+      
     );
   }
 }

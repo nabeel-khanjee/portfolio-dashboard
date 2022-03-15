@@ -13,7 +13,7 @@ class PageNotFound extends StatelessWidget {
           children: [
             Expanded(
               child: Image.asset(
-                "assets/images/404-error-page-not-found-yellow-vector-19690855-removebg-preview.png",
+                "assets/images/404-page.png",
                 width: 350,
               ),
             ),

@@ -21,7 +21,7 @@ class ProjectDetailPage extends StatelessWidget {
               GridView.builder(
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
 
-                   maxCrossAxisExtent: 400.0,
+                   maxCrossAxisExtent: 300.0,
                    mainAxisExtent: 400,
     mainAxisSpacing: 10.0,
     crossAxisSpacing: 10.0,

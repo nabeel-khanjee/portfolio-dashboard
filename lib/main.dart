@@ -33,8 +33,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: RootRoute,
       // home: SetExp(),
+      initialRoute: RootRoute,
       onUnknownRoute: (RouteSettings settings) {
         return MaterialPageRoute(
           settings: settings,

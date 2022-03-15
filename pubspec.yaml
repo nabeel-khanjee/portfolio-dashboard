@@ -41,8 +41,8 @@ dependencies:
   cloud_firestore: ^3.1.10
 
 flutter_native_splash:
-  color: "#1a1a1a"
-  image: assets/images/pngtab_yellow-gif-clip-art-graphics-animation-image-area.png
+  color: "#1e1e28"
+  image: assets\images\splash.png
   android: true
   iOS: true
   
@@ -65,8 +65,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/icons/
-    - assets/images/
+    - assets/icons/.
+    - assets/images/404-page.png
+    - assets/images/.
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

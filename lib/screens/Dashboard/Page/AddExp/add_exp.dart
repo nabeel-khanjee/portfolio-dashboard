@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_profile/components/input_field_for_app.dart';
 import 'package:flutter_profile/constants.dart';
 import 'package:flutter_profile/models/Experience.dart';
+import 'package:flutter_profile/responsive.dart';
 import 'package:flutter_profile/screens/DashboardAth/dashboardAuth.dart';
 import 'package:flutter_profile/screens/main/components/side_menu.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -20,9 +21,26 @@ class AddExp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Add Exp")),
+      appBar: Responsive.isDesktop(context)
+          ? null
+          : AppBar(
+              backgroundColor: bgColor,
+              leading: Builder(
+                builder: (context) => IconButton(
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                  icon: Icon(Icons.menu),
+                ),
+              ),
+            ),
+      drawer: SideMenu(),
       body: Row(children: [
-        Expanded(flex: 2, child: SideMenu()),
+        if (Responsive.isDesktop(context))
+                Expanded(
+                  flex: 2,
+                  child: SideMenu(),
+                ),
         Expanded(
             flex: 8,
             child: Container(
